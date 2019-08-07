@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<resilience4j.version>0.17.0</resilience4j.version>
+		<micrometer.version>1.1.4</micrometer.version>
 	</properties>
 
 	<dependencies>
@@ -48,6 +49,18 @@
 			<artifactId>resilience4j-reactor</artifactId>
 			<version>${resilience4j.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>io.github.resilience4j</groupId>
+			<artifactId>resilience4j-micrometer</artifactId>
+			<version>${resilience4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<version>${micrometer.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
