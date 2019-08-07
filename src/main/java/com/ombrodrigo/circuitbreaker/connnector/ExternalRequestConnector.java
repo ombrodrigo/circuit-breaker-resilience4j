@@ -25,7 +25,11 @@ public class ExternalRequestConnector {
     return dateTimeRepository.getCurrentDateTime();
   }
 
-  private String fallback(ConnectorException ex) {
-    return "Unavailable service";
+  public String fallback(ConnectorException ex) {
+    return "Unavailable service.";
+  }
+
+  private String fallback(Throwable ex) {
+    return "Recovered Throwable.";
   }
 }
