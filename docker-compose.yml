@@ -1,0 +1,10 @@
+version: "3"
+services:
+  external-service:
+    image: php:7.1.31-cli-alpine
+    ports:
+      - 1234:80
+    volumes:
+      - ./external-service/:/var/www/html/
+    working_dir: /var/www/html/
+    command: php -S 0.0.0.0:80 index.php
