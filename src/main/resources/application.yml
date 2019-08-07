@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+resilience4j:
+  circuitbreaker:
+    backend:
+      externalServiceCircuitBreaker:
+        ringBufferSizeInClosedState: 5
+        ringBufferSizeInHalfOpenState: 5
+        waitDurationInOpenState : 5s
+        failureRateThreshold: 50
+  ratelimiter:
+    limiter:
+      externalServiceLimiter:
+        limitForPeriod: 1
+        limitRefreshPeriod: 5s
+        timeoutDuration: 1s
