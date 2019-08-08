@@ -5,10 +5,11 @@ global:
     monitor: 'circuit-breaker-monitor'
 
 scrape_configs:
-  # - job_name: 'prometheus'
-  #   scrape_interval: 5s
-  #   static_configs:
-  #     - targets: ['localhost:8080']
+  - job_name: 'prometheus-metrics'
+    scrape_interval: 5s
+    # metrics_path default "/metrics"
+    static_configs:
+      - targets: ['localhost:9090']
 
   - job_name: 'circuit-breaker-metrics'
     scrape_interval: 5s

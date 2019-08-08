@@ -22,3 +22,5 @@ services:
     image: grafana/grafana
     container_name: circuitbreaker_grafana
     network_mode: "host"
+    volumes:
+      - ./docker/grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
