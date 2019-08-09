@@ -6,7 +6,7 @@ management.endpoints.web.exposure.include: "*"
 resilience4j.circuitbreaker:
   instances:
     externalRequest:
-      ringBufferSizeInClosedState: 5
+      ringBufferSizeInClosedState: 10
       ringBufferSizeInHalfOpenState: 5
       waitDurationInOpenState: 5s
       failureRateThreshold: 50
