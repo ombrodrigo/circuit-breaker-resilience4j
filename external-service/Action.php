@@ -11,16 +11,16 @@ class Action
 
     public function success()
     {
-        $this->response->send(['message' => 'SUCCESS', 'timestamp' => time()], 200);
+        $this->response->send(['date_time' => date('Y-m-d H:i:s')], 200);
     }
 
     public function sleep()
     {
-        $this->response->send(['message' => 'SLEEP', 'timestamp' => time()], 200, 5);
+        $this->response->send(['date_time' => date('Y-m-d H:i:s')], 200, 5);
     }
 
     public function error()
     {
-        $this->response->send(['message' => 'ERROR', 'timestamp' => time()], 500);
+        $this->response->send(['date_time' => date('Y-m-d H:i:s')], 500);
     }
 }

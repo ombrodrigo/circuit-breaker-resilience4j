@@ -14,6 +14,7 @@ class Response
             $response = [$response];
         }
 
-        echo json_encode($response);
+        header('Content-type: application/json');
+        echo json_encode([$response]);
     }
 }
