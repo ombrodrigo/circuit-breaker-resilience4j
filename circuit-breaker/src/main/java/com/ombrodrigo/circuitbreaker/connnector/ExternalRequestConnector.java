@@ -1,7 +1,7 @@
 package com.ombrodrigo.circuitbreaker.connnector;
 
 import com.ombrodrigo.circuitbreaker.exception.ConnectorException;
-import com.ombrodrigo.circuitbreaker.repository.DateTimeRepository;
+import com.ombrodrigo.circuitbreaker.client.DateTimeClient;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
@@ -14,15 +14,15 @@ import org.springframework.stereotype.Component;
 @CircuitBreaker(name = "externalRequest", fallbackMethod = "fallback")
 public class ExternalRequestConnector {
 
-  private DateTimeRepository dateTimeRepository;
+  private DateTimeClient dateTimeClient;
 
-  public ExternalRequestConnector(DateTimeRepository dateTimeRepository) {
-    this.dateTimeRepository = dateTimeRepository;
+  public ExternalRequestConnector(DateTimeClient dateTimeClient) {
+    this.dateTimeClient = dateTimeClient;
   }
 
   @Bulkhead(name = "externalRequest")
   public String getCurrentDateTime() {
-    return dateTimeRepository.getCurrentDateTime();
+    return dateTimeClient.getCurrentDateTime();
   }
 
   public String fallback(ConnectorException ex) {
