@@ -15,15 +15,15 @@ mvn spring-boot:run
 ```
 #### Use docker-compose to start external-service, grafana and prometheus servers.
 ```sh
-docker-compose up
+docker-compose up --build
 ```
 
 ## Creating some records
-Excute with cURL or browser http://localhost:8080/externalRequest/date-time
+Excute with cURL or browser http://localhost:8080/random
 
 ## Looking the results
 
 * Open [http://localhost:3000](http://localhost:3000)
 * Access Grafana with admin:admin
 
-![alt text](https://i.imgur.com/pJmmmAc.png)
+![alt text](https://imgur.com/iK7R64N)

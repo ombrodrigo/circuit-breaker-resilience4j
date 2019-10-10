@@ -2,14 +2,15 @@ version: "3"
 services:
 
   external-service:
-    image: php:7.1.31-cli-alpine
+    build:
+      context: ./docker/wiremock
+      dockerfile: Dockerfile-wiremock
+    image: wiremock:latest
     container_name: circuitbreaker_external-service
     ports:
-      - 1234:80
+      - 1234:8080
     volumes:
-      - ./external-service/:/var/www/html/
-    working_dir: /var/www/html/
-    command: php -S 0.0.0.0:80 index.php
+      - ./wiremock/:/home/wiremock/
 
   prometheus:
     image: prom/prometheus
