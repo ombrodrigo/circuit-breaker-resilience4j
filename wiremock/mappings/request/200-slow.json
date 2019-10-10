@@ -1,0 +1,15 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/200-slow"
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "response/200-slow.json",
+        "delayDistribution": {
+            "type": "uniform",
+            "lower": 7000,
+            "upper": 17000
+        }
+    }
+}

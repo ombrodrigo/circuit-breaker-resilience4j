@@ -12,7 +12,7 @@ public class ExternalRequestService {
     this.externalRequestConnector = externalRequestConnector;
   }
 
-  public String getCurrentDateTime() {
-    return this.externalRequestConnector.getCurrentDateTime();
+  public String run() {
+    return this.externalRequestConnector.run();
   }
 }

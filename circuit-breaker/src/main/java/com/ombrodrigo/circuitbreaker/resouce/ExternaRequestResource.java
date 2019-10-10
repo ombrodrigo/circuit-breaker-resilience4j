@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/externalRequest")
+@RequestMapping("/")
 public class ExternaRequestResource {
 
   private ExternalRequestService externalRequestService;
@@ -15,8 +15,8 @@ public class ExternaRequestResource {
     this.externalRequestService = externalRequestService;
   }
 
-  @GetMapping("/date-time")
-  public String dateTime() {
-    return this.externalRequestService.getCurrentDateTime();
+  @GetMapping("/random")
+  public String random() {
+    return this.externalRequestService.run();
   }
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NUMBER_REPETITIONS=10
-URL="http://localhost:8080/externalRequest/date-time"
+URL="http://localhost:8080/random"
 
 while :
 do
