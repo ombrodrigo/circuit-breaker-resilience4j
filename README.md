@@ -26,4 +26,4 @@ Excute with cURL or browser http://localhost:8080/random
 * Open [http://localhost:3000](http://localhost:3000)
 * Access Grafana with admin:admin
 
-![alt text](https://imgur.com/iK7R64N)
+![alt text](https://i.imgur.com/iK7R64N.png)
