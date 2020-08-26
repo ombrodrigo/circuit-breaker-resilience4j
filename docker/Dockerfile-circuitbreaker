@@ -1,0 +1,10 @@
+FROM maven:3.6-jdk-8-alpine AS build
+COPY /circuit-breaker/src /circuit-breaker/src
+COPY /circuit-breaker/pom.xml /circuit-breaker/pom.xml
+RUN mvn -f /circuit-breaker/pom.xml clean package
+
+FROM openjdk:8-jre-alpine
+COPY --from=build /circuit-breaker/target/circuitbreaker-0.0.1-SNAPSHOT.jar /circuit-breaker/circuitbreaker-0.0.1-SNAPSHOT.jar
+ENV JAVA_OPTS="-Xms64m -Xmx64m -Duser.timezone=America/Sao_Paulo"
+EXPOSE 8080
+ENTRYPOINT java $JAVA_OPTS -jar /circuit-breaker/circuitbreaker-0.0.1-SNAPSHOT.jar
