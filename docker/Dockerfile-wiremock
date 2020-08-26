@@ -1,11 +1,11 @@
 FROM openjdk:8-jre-alpine
 
-ENV WIREMOCK_VERSION 2.24.1
+ENV WIREMOCK_VERSION 2.27.0
 ENV WIREMOCK_PATH_STANDALONE /opt/wiremock
 ENV WIREMOCK_MAPPINGS /home/wiremock
 
 RUN mkdir -p $WIREMOCK_PATH_STANDALONE \
-  && wget http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/$WIREMOCK_VERSION/wiremock-standalone-$WIREMOCK_VERSION.jar \
+  && wget https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/$WIREMOCK_VERSION/wiremock-standalone-$WIREMOCK_VERSION.jar \
     -O $WIREMOCK_PATH_STANDALONE/wiremock-standalone.jar
 
 WORKDIR $WIREMOCK_MAPPINGS

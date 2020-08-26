@@ -1,10 +1,18 @@
 version: "3"
 services:
+  circuit-breaker:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-circuitbreaker
+    image: circuitbreaker:latest
+    container_name: circuitbreaker_circuitbreaker
+    ports:
+      - 8080:8080
 
   external-service:
     build:
-      context: ./docker/wiremock
-      dockerfile: Dockerfile-wiremock
+      context: .
+      dockerfile: ./docker/Dockerfile-wiremock
     image: wiremock:latest
     container_name: circuitbreaker_external-service
     ports:
