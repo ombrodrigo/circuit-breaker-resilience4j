@@ -9,13 +9,9 @@ circuit-breaker-resilience4j it's a simple project to test circuit breaker patte
 
 ## Getting started
 
-#### In circuit-breaker folder, run project with Maven
+#### Use docker-compose to start CircuitBreaker, external-service, grafana and prometheus servers.
 ```sh
-mvn spring-boot:run
-```
-#### Use docker-compose to start external-service, grafana and prometheus servers.
-```sh
-docker-compose up --build
+docker-compose up -d
 ```
 
 ## Creating some records
